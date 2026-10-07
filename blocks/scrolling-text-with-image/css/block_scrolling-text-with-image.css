@@ -1,0 +1,185 @@
+/* ==========================================================
+   Scrolling Text with Image - scroll-lock version
+   Section ki height fixed hai. Jab section viewport top (--pin-top) pe pahunchta hai,
+   JS page scroll rok kar text column scroll karta hai, aakhri item ke baad page chhod deta hai.
+   JS sets: --end-space (aakhri item bhi active line tak pahunch sake)
+   ========================================================== */
+
+.section_scroll_text_box {
+	--pin-h: 700px;
+	--pin-top: 0px; /* fixed header ho to uski height px mein likho (jaise 80px) */
+	position: relative;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: min(var(--pin-h), calc(100dvh - var(--pin-top)));
+}
+
+/* ---------- Right column (text) ---------- */
+.section_scroll_text_box .content_boxes {
+	order: 2;
+	position: relative;
+	height: 100%;
+	box-sizing: border-box;
+	padding: 100px;
+	display: flex;
+	flex-direction: column;
+	overflow-y: hidden; /* sirf JS scroll karti hai, taake section pin se pehle items na badlein */
+}
+.section_scroll_text_box .content_boxes::after {
+	content: "";
+	flex: 0 0 var(--end-space, 0px);
+}
+
+.section_scroll_text_box .content_boxes .side_image {
+	display: none;
+	height: 400px;
+	overflow: hidden;
+}
+.section_scroll_text_box .content_boxes .side_image img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+}
+
+.section_scroll_text_box .content_item {
+	border-left: 4px solid var(--wp--preset--color--lightbeige);
+	padding-left: 78px;
+	padding-top: 45px;
+	padding-bottom: 35px;
+	position: relative;
+	flex-shrink: 0; /* zaroori: warna items box mein fit hone ke liye shrink ho jate hain */
+	opacity: 0.35;
+	transition: opacity 0.3s linear;
+}
+.section_scroll_text_box .content_item.active {
+	opacity: 1;
+}
+.section_scroll_text_box .content_item::before {
+	content: "";
+	width: 4px;
+	height: 0;
+	background-color: var(--wp--preset--color--red);
+	position: absolute;
+	left: -4px;
+	top: 0;
+	transition: all 0.3s linear;
+}
+.section_scroll_text_box .content_item.active::before {
+	height: 100%;
+}
+
+/* ---------- Left column (images) ---------- */
+.section_scroll_text_box .side_image_col {
+	position: relative;
+	overflow: hidden;
+}
+.section_scroll_text_box .side_image_col .box_img {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: translateX(-100%);
+	transition: all 0.3s linear;
+}
+.section_scroll_text_box .side_image_col .box_img.active {
+	transform: translateX(0);
+	opacity: 1;
+}
+.section_scroll_text_box .side_image_col .box_img img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Scroll-lock: JS section stick hote hi yeh class <html> pe lagati hai, aakhri item pe hata deti hai */
+html.scroll-text-locked,
+html.scroll-text-locked body {
+	overflow: hidden !important;
+}
+/* Scrollbar gayab hone par layout 15px na hile (Windows) */
+html:has(.section_scroll_text_box) {
+	scrollbar-gutter: stable;
+}
+
+/* Touch devices (wheel nahi hota): text column normal swipe se scroll ho */
+@media (pointer: coarse) {
+	.section_scroll_text_box .content_boxes {
+		overflow-y: auto;
+	}
+}
+
+/* Gutenberg editor mein bhi normal scroll (frontend pe yeh classes nahi hoti) */
+.block-editor-iframe__body .section_scroll_text_box .content_boxes,
+.block-editor-block-list__layout .section_scroll_text_box .content_boxes {
+	overflow-y: auto;
+}
+
+/* ---------- Responsive ---------- */
+@media only screen and (max-width: 1400px) {
+	.section_scroll_text_box .content_boxes {
+		padding: 50px;
+	}
+	.section_scroll_text_box .content_item {
+		padding-left: 50px;
+		padding-top: 30px;
+		padding-bottom: 25px;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.section_scroll_text_box {
+		--pin-h: 600px;
+	}
+}
+
+/* 1024px se neeche: normal stacked layout, JS kuch nahi karta */
+@media only screen and (max-width: 1024px) {
+	.section_scroll_text_box {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+	.section_scroll_text_box .side_image_col {
+		display: none;
+	}
+	.section_scroll_text_box .content_boxes {
+		height: auto;
+		overflow: visible;
+		padding: 0;
+		gap: 0;
+	}
+	.section_scroll_text_box .content_boxes::after {
+		display: none;
+	}
+	.section_scroll_text_box .content_item {
+		padding: 0;
+		border: 0;
+		opacity: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+	}
+	.section_scroll_text_box .content_item .content_box {
+		padding: 45px;
+	}
+	.section_scroll_text_box .content_item::before {
+		display: none;
+	}
+	.section_scroll_text_box .content_boxes .side_image {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.section_scroll_text_box .content_item .content_box {
+		padding: 45px 20px;
+	}
+	.section_scroll_text_box .content_boxes .side_image {
+		height: 300px;
+	}
+}
