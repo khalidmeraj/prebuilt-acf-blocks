@@ -1,0 +1,273 @@
+[
+    {
+        "key": "group_6a1483a1cd98d",
+        "title": "Accordion",
+        "fields": [
+            {
+                "key": "field_6ab6a0bd51917",
+                "label": "Inner Container Width",
+                "name": "inner_container_width",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "default": "Default",
+                    "medium-container": "Medium 1400px"
+                },
+                "default_value": "default",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "allow_in_bindings": 1,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a1483a1ce442",
+                "label": "Section Title",
+                "name": "section_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6a1483a1ce47b",
+                "label": "Section Title Tag",
+                "name": "section_title_tag",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "h1": "H1",
+                    "h2": "H2",
+                    "h3": "H3",
+                    "h4": "H4",
+                    "h5": "H5"
+                },
+                "default_value": "h2",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a1483a1ce4b1",
+                "label": "Section Title FontSize",
+                "name": "section_title_fontsize",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "default": "Default",
+                    "large-65": "Large - 65px",
+                    "large-50": "Large - 50px",
+                    "large-45": "Large - 45px",
+                    "medium-40": "Medium - 40px",
+                    "medium-35": "Medium - 35px",
+                    "medium-30": "Medium - 30px",
+                    "small-25": "Small - 25px",
+                    "small-24": "Small - 24px",
+                    "small-21": "Small - 21px",
+                    "small-20": "Small - 20px",
+                    "small-18": "Small - 18px",
+                    "small-16": "Small - 16px"
+                },
+                "default_value": "default",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a1483a1ce4e7",
+                "label": "Section Description",
+                "name": "section_description",
+                "aria-label": "",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0,
+                "delay": 0
+            },
+            {
+                "key": "field_6a1483a1ce51d",
+                "label": "Section Description FontSize",
+                "name": "section_description_fontsize",
+                "aria-label": "",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "default": "Default",
+                    "large-65": "Large - 65px",
+                    "large-50": "Large - 50px",
+                    "large-45": "Large - 45px",
+                    "medium-40": "Medium - 40px",
+                    "medium-35": "Medium - 35px",
+                    "medium-30": "Medium - 30px",
+                    "small-25": "Small - 25px",
+                    "small-24": "Small - 24px",
+                    "small-21": "Small - 21px",
+                    "small-20": "Small - 20px",
+                    "small-18": "Small - 18px",
+                    "small-16": "Small - 16px"
+                },
+                "default_value": "small-20",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "create_options": 0,
+                "save_options": 0
+            },
+            {
+                "key": "field_6a1483a1ce5e0",
+                "label": "Accordion",
+                "name": "accordion",
+                "aria-label": "",
+                "type": "repeater",
+                "instructions": "Leave Empty to display all",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "table",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6a1483f471e37",
+                        "label": "Question",
+                        "name": "question",
+                        "aria-label": "",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6a1483a1ce5e0"
+                    },
+                    {
+                        "key": "field_6a14841271e39",
+                        "label": "Answer Content",
+                        "name": "answer_content",
+                        "aria-label": "",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "delay": 0,
+                        "parent_repeater": "field_6a1483a1ce5e0"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf\/accordion"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "display_title": "",
+        "allow_ai_access": false,
+        "ai_description": ""
+    }
+]

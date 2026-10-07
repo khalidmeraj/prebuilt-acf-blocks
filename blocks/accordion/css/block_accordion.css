@@ -1,0 +1,114 @@
+
+.accordion_inner {
+	display: flex;
+	gap: 50px;
+	justify-content: space-between;
+}
+.accordion_inner .faq_accordion {
+	flex: 1;
+	max-width: 928px;
+}
+.faq_accordion {
+	text-align: left;
+}
+.faq_accordion .faq_accordion_item {
+	border: 1px solid #9B9999;
+	margin-bottom: -1px;
+	border-left: 0;
+	border-right: 0;
+}
+.faq_accordion .accordion_title {
+	margin-bottom: 0;
+	
+}
+.faq_accordion .accordion_title_head .row_count {
+	font-size: 14px;
+	font-weight: 400;
+	color: #9B9999;
+	min-width: 17px;
+}
+.faq_accordion .accordion_title_head {
+	background: none !important;
+	border: none;
+	margin: 0;
+	width: 100%;
+	text-align: left;
+	font: inherit;
+	color: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 18px 0;
+	cursor: pointer;
+	transition: 150ms;
+	gap: 18px;
+	position: relative;
+	border: 0 !important;
+	border-radius: 0 !important;
+	color: inherit !important;
+	white-space: wrap;
+  	height: auto;
+}
+.faq_accordion .accordion_title_head::after {
+	content: "\e815";
+	font-family: "kbg";
+	color:#9B9999;
+	font-size: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transform: rotate(90deg);
+	transition: all 0.3s linear;
+	margin-left: auto !important;
+}
+
+
+
+/* Keyboard-only focus indicator (buttons par ye mouse-click par trigger nahi hota) */
+.faq_accordion .accordion_title_head:focus-visible {
+	outline: 2px dotted;
+	outline-offset: 0;
+}
+
+
+
+
+.faq_accordion .accordion_title_head:hover::after, 
+.faq_accordion .accordion_title_head:active::after,
+.faq_accordion .accordion_title_head.opened::after {
+	
+	color: var(--wp--preset--color--black);
+	
+}
+.faq_accordion .accordion_title_head.opened::after {
+	transform: rotate(-90deg);
+}
+
+.faq_accordion .accordion_title_head:hover .row_count , 
+.faq_accordion .accordion_title_head:active .row_count,
+.faq_accordion .accordion_title_head.opened .row_count {
+	
+	color: var(--wp--preset--color--black);
+	
+}
+
+.faq_accordion .accordion_content {
+	display: none;
+}
+
+
+.faq_accordion .answer_item {
+	padding: 0 35px 18px;
+}
+.faq_accordion .answer_item p:empty {
+	display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+	.accordion_inner {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+
+}
