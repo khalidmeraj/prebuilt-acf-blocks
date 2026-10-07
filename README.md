@@ -7,6 +7,7 @@ A growing collection of ready-to-use custom blocks for classic WordPress themes,
 | Block | What it does |
 | --- | --- |
 | [Scrolling Text with Image](blocks/scrolling-text-with-image) | Sticky scroll section: text sections scroll on the right while the matching image changes on the left |
+| [Accordion](blocks/accordion) | Accessible FAQ accordion: one answer open at a time, numbered questions |
 
 ## Requirements
 
