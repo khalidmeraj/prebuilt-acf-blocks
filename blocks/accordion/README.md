@@ -2,6 +2,8 @@
 
 An accessible FAQ-style accordion with an optional heading and description above it. Each question is a real button, one answer is open at a time, and the questions are numbered (01, 02, 03, ...).
 
+![Block preview](assets/block-previews/accordion.jpg)
+
 ## Installation
 
 Follow the steps in the [main README](../../README.md#installation). Block name: `accordion`.
